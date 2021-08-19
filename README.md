@@ -2,73 +2,137 @@
 
 ### Baslangic
 
-- Projeyi clonelayin
+- Projeyi forklayabilir / veya zipini indirip git dosyasını sildikten sonra kendi hesabınızda <b>private</b> repo olarak yükleyebilirsiniz.
 - proje ana dizininde asagidaki komutlari calistirin
 
-```sh
-yarn install
-```
+  ```sh
+  yarn install
+  ```
 
-```sh
-yarn start
-```
+  ```sh
+  yarn start
+  ```
+
+</br>
+<b>Önemli Not:</b> Projenin zipini aldıysanız kendi projenize attığınız ilk commit projede hiçbir değişiklik yapılmamış hali olmalı.
 
 </br></br>
 
-### Gereklilikler
+### Görev Amacı
 
-- Ismi girilen kullanicinin github profil bilgisi ve altinda github repositorylerinin listelenmesi
-- kullanicinin profil bilgisi olarak asagidaki bilgilerin gosterilmesi beklenmektedir
-  - name
-  - location
-  - company
-  - avatar_url
-  - public_repos
-  - followers
-  - following
-- ismi girilen github kullanicisinin public repositorylerinin ‘created_at’ degerine gore listelenmesi
-- listelenen repository kart larinda bulunmasi gereken bilgiler
-  - repository ismi
-  - created_at zamani
-  - repo cart in uzerine url repository url koyulmasi
-  - Repository dili
-  - Favori butonu
-- Her bir repository nin sağ üstünde yıldız ikonuna basıldığında favoriye eklenebilir olması
+- Adayın aşağıdaki teknolojilere olan yetkinliğini gözlemlemek adına oluşturulmustur:
+  - React yetkinliği
+  - Styling bilgisi
+  - Git kullanımı
+
+</br></br>
+
+### Görev Tanımı
+
+#### a. Git
+
+- Görevde proje kullanılacak teknolojilerin kurulumunun sağlandığı kod adayın görevi onaylaması ile Github üzerinden iletilecektir. Bunun dışında aday kendi proje başlangıcını yapması da uygun görülmektedir. Örneğin proje Next.js altyapısı ile yapılabilir.
+
+- Aday paylaşılan görevin kodunu kullanmakta olduğu Github/Gitlab hesabında Private bir repository açarak kodun paylaşılmış ilk halini ‘First Commit’ olarak yüklemesi beklenmektedir.
+
+- Projeye, ad ve soyadının baş harfleriyle branch açarak çalışmasını bu branch te yapması (örnek: Bill Gates -> BG-branch)
+
+- Görev bitirildiğinde
+
+  1. Görevin branch e yüklenmesi
+  2. Branch in Master branch ine merge işleminin gerçekleştirilmesi
+  3. Görevin aşağıdaki hesaplar ile paylaşılması
+
+  - Github ise
+    - baris-karan
+    - muhammeddeniz
+  - Gitlab ise
+    - bariskaran
+    - muhammeddeniz
+
+  4. Görevin tamamlandığına dair cevap maili hazırlanması beklenmektedir.
+
+- Master branch ine merge işleminin yapıldığı ve atılan cevap mailinin tarihi dikkate alınacaktır.
+
+</br></br>
+
+#### b. Görev
+
+##### Görev tanımı:
+
+1. İsmi girilen kullanıcının github profil bilgisi ve altinda sahip olduğu github repository lerinin listelenmesi beklenmektedir.
+
+2. Profile bilgisi getirmek için kullanılabilecek servis:
+
+GET:
+
+```sh
+https://api.github.com/users/{githubUserName}
+```
+
+<br/>
+
+3. Profile ait repolari getirmek için kullanılabilecek servis:
+
+GET:
+
+```sh
+https://api.github.com/users/{githubUserName}/repos
+```
+
+<br/>
+
+##### Kullanıcının profil bilgisi olarak aşağıdaki bilgilerin gösterilmesi beklenmektedir
+
+- name
+- location
+- company
+- avatar_url
+- public_repos
+- followers
+- following
+
+<br/>
+
+##### İsmi girilen github kullanicisinin public repositorylerinin ‘created_at’ degerine gore listelenmesi
+
+<br/>
+
+##### Listelenen repository kart larinda bulunmasi gereken bilgiler
+
+1. Repository ismi
+2. Repository oluşturulma zamanı
+3. Repository url bilgisi
+
+- repository ismine koyularak tıklandığında url yönlenmesinin sağlanması
+
+4. Repository dili
+5. Favori butonu
+
+<br/>
+
+#### Her bir repository nin sağ üstünde yıldız ikonuna basıldığında favoriye eklenebilir olması
+
 - favoriye eklenmis bir repositoryde favoriye eklendigi icon olarak degismesi beklenmektedir.
-- Favoriye eklenmiş repository nin yildiz icon una basıldığında favorilerden silinmesi
-- Favoriden çıkarılmış bir repository icon un başlangıç haline geri dönmesi beklenmektedir.
-- Sayfanın sağ üstünde bulunan favori repolar butonuna basıldığında
+
+#### Favoriye eklenmiş repository nin yildiz icon una basıldığında favorilerden silinmesi
+
+- Favoriden çıkarılmış bir repository icon un başlangıç haline geri dönmesi beklenmektedir
+
+#### Sayfanın sağ üstünde bulunan favori repolar butonuna basıldığında
+
 - Favori olan kaydedilmiş repository lerin listelenmesi beklenmektedir.
-- vercel deploy edilmesi
+
+#### vercel deploy edilmesi
+
+- Bonus
 
 <br /><br />
 
-### Endpointler
-
-<table>
-<tr>
-<th>Islem</th>
-<th>URL</th>
-</tr>
-
- <tr>
-    <td>profile bilgisi getirmek icin</td>
-    <td>https://api.github.com/users/{KULLANICI_ADI}</td>
-  </tr>
-  <tr>
-    <td>profile ait repolari getirmek icin</td>
-    <td>https://api.github.com/users/{KULLANICI_ADI}/repos</td>
-  </tr>
-</table>
-
-<b>NOT: </b> "{{KULLANICI ADI}}", Profil bilgisi veya reposu istenilen kullanici ismine karsilik gelmektedir.
-
-<br /><br />
-
-### ONEMLI NOTLAR
+### 3. Görevde kullanılması uygun görülen teknolojiler
 
 - Functional component kullanilmali (onemli)
-- Redux kullanilmali ( en azindan redux setupi yapilmis olmali )
+- Redux kullanilmali ( setupi starterkit ile geliyor zaten )
 - Redux baglantisi hooklar ile yapilmali (orn: useSelector, useDispatch)
 - Stillendirme icin hazir kutuphane kullanilabilir. (orn: chakraui, bootstrap)
 - Axios api call icin kullanilabilir
