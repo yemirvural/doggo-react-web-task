@@ -18,7 +18,7 @@
 
 </br></br>
 
-### Görev Amacı
+### 1. Görev Amacı
 
 - Adayın aşağıdaki teknolojilere olan yetkinliğini gözlemlemek adına oluşturulmustur:
   - React yetkinliği
@@ -27,7 +27,7 @@
 
 </br></br>
 
-### Görev Tanımı
+### 2. Görev Tanımı
 
 #### a. Git
 
@@ -131,13 +131,21 @@ https://api.github.com/users/{githubUserName}/repos
 
 ### 3. Görevde kullanılması uygun görülen teknolojiler
 
-- Functional component kullanilmali (onemli)
-- Redux kullanilmali ( setupi starterkit ile geliyor zaten )
-- Redux baglantisi hooklar ile yapilmali (orn: useSelector, useDispatch)
-- Stillendirme icin hazir kutuphane kullanilabilir. (orn: chakraui, bootstrap)
-- Axios api call icin kullanilabilir
+- Redux ( setupi starterkit ile geliyor zaten )
+- Redux bağlantısı React Hooklar ile yapılması (orn: useSelector, useDispatch)
+- Stillendirme icin hazir kutuphane kullanılabilir (orn: chakraui, bootstrap, scss, css)
+- Axios HTTP service istekleri için kullanılabilir.
 - React router dom Sayfa yonlendirmeleri icin kullanilmali.
 - react-vertical-timeline-component ile zaman dilimine gore sortlanmasi (repolar listelenirken kullanilabilir)
+
+<br/></br>
+
+### 4. Kodlarken Nelere Dikkat Etmeli?
+
+- Functional component (onemli)
+- Clean Code
+- Commitlerin duzenli olmasi
+- İstenilen görevin fonksiyonelliğinin karşılanması.
 
 <br/></br>
 
