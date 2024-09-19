@@ -1,157 +1,53 @@
-# Task Senaryosu
+## Başlarken
 
-### Baslangic
+Uygulamayı çalıştırmak için aşağıdaki komutların herhangi birisini çalıştırabilirsin:
 
-- Projeyi forklayabilir / veya zipini indirip git dosyasını sildikten sonra kendi hesabınızda <b>private</b> repo olarak yükleyebilirsiniz.
-- proje ana dizininde asagidaki komutlari calistirin
-
-  ```sh
-  yarn install
-  ```
-
-  ```sh
-  yarn start
-  ```
-
-</br>
-<b>Önemli Not:</b> Projenin zipini aldıysanız kendi projenize attığınız ilk commit projede hiçbir değişiklik yapılmamış hali olmalı.
-
-</br></br>
-
-### 1. Görev Amacı
-
-- Adayın aşağıdaki teknolojilere olan yetkinliğini gözlemlemek adına oluşturulmustur:
-  - React yetkinliği
-  - Styling bilgisi
-  - Git kullanımı
-
-</br></br>
-
-### 2. Görev Tanımı
-
-#### a. Git
-
-- Görevde proje kullanılacak teknolojilerin kurulumunun sağlandığı kod adayın görevi onaylaması ile Github üzerinden iletilecektir. Bunun dışında aday kendi proje başlangıcını yapması da uygun görülmektedir. Örneğin proje Next.js altyapısı ile yapılabilir.
-
-- Aday paylaşılan görevin kodunu kullanmakta olduğu Github/Gitlab hesabında Private bir repository açarak kodun paylaşılmış ilk halini ‘First Commit’ olarak yüklemesi beklenmektedir.
-
-- Projeye, ad ve soyadının baş harfleriyle branch açarak çalışmasını bu branch te yapması (örnek: Bill Gates -> BG-branch)
-
-- Görev bitirildiğinde
-
-  1. Görevin branch e yüklenmesi
-  2. Branch in Master branch ine merge işleminin gerçekleştirilmesi
-  3. Görevin aşağıdaki hesaplar ile paylaşılması
-
-  - Github ise
-    - baris-karan
-    - muhammeddeniz
-  - Gitlab ise
-    - bariskaran
-    - muhammeddeniz
-
-  4. Görevin tamamlandığına dair cevap maili hazırlanması beklenmektedir.
-
-- Master branch ine merge işleminin yapıldığı ve atılan cevap mailinin tarihi dikkate alınacaktır.
-
-</br></br>
-
-#### b. Görev
-
-##### Görev tanımı:
-
-1. İsmi girilen kullanıcının github profil bilgisi ve altinda sahip olduğu github repository lerinin listelenmesi beklenmektedir.
-
-2. Profile bilgisi getirmek için kullanılabilecek servis:
-
-GET:
-
-```sh
-https://api.github.com/users/{githubUserName}
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-<br/>
+## Görev
 
-3. Profile ait repolari getirmek için kullanılabilecek servis:
+[Figma](https://www.figma.com/design/GTtrjzfO78hIUx0iXF8OhW/Doggo-FrontEnd-Task?node-id=371-3418&t=cq3ewo3a4uMk6DBe-1) linkindeki tasarımı olabildiğince aslına uygun bir şekilde gerçekleştirmeni talep ediyoruz. Açıklığa kavuşturmak için:
 
-GET:
+- Tasarım responsive olmalıdır. Tasarım büyük, orta ve küçük ölçekli cihazlar için ayrı ayrı verilmiş durumdadır.
+- Tasarım yalnızca ana sayfa tasarımını içermektedir. Bunun dışında 3 farklı sayfanın daha geliştirilmesi beklenmektedir: `#Explore`, `Bookmarks` ve `Profile`. Buradaki tasarım adaya bırakılmıştır ancak var olan tasarımla uyumlu olması beklenmektedir.
+- `#Exlore` sayfası postları etiketler aracılığıyla bulmak ve göstermek içindir.
+- `Bookmarks` daha önce beğenilen postları listelemek içindir.
+- `Profile` daha önce kişi tarafından paylaşılmış postları listelemek içindir.
+- Bu sayfalar arasında dolaşabilmek istiyoruz.
+- `Bookmarks` ve `Profile` sayfalarının içeriklerinin `redux` (`redux`, `redux-toolkit` farketmez) ile yönetilmesi beklenmektedir. Bir post'u beğendiğimizde ya da yeni bir post yayınladığımızda bunların redux'a kayıt edilmesi ve gerektiğinde de redux'tan çekilip gösterilmesi gerekmektedir.
+- `Ana sayfa` bir akış ekranıdır. Postlar burada en güncel olandan, en eski olana doğru listelenmelidir. Post'a tıkladığımızda bu post'a yapılmış yorumları görebilmeliyiz.
+- Bu ekranın verisi `data` klasörünün altındaki `post_dataset.json` dosyasına dayanmalıdır. Bir fake json API oluşturulup (`json-server` kütüphanesi kullanılabilir) bu sunucuya istek atılarak veriler çekilmelidir.
+- `Ana sayfa`da geliştirilmesi beklenen bir diğer işlevsellik ise `Search`'dür. Yazmayı bitirdikten yaklaşık `1500ms` sonra post içerikleri arasında yazılan kelime/cümle aranmalı ve böyle bir içerik mevcutsa akış içerisindeki veriler ile bunlar yer değiştirmelidir. `Search` boşsa akış gösterilmelidir.
 
-```sh
-https://api.github.com/users/{githubUserName}/repos
-```
+Community içerisinde geliştirilen tüm kütüphaneler kullanılabilir. Kullanılması zorunlu olan paketler: `nextjs`, `redux`, `typescript` ve `json-server`'dır.
 
-<br/>
+> Projeyi teslim ederken dikkat etmen gereken en önemli şey `eslint` komutunun çalışması ve projenin başarılı bir şekilde `build` almasıdır.
+> Sizinle paylaştığımız dosyalar sorunsuz olmayabilir. Şüpheci olup karşılaşılabilecek problemleri de çözmenizi bekliyoruz.
 
-##### Kullanıcının profil bilgisi olarak aşağıdaki bilgilerin gösterilmesi beklenmektedir
+## Daha İyi Ne Olabilir?
 
-- name
-- location
-- company
-- avatar_url
-- public_repos
-- followers
-- following
+- Bileşenlerin, Sayfaların vd. testleri olabilir. Eğer aşinaysan belki bunları bir AI tool'u kullanarak bile yazdırabilirsin! Buna çok mutlu oluruz ^^
+- Yazdığın kodu dokümante edebilirsin.
+- Karşılaştığın zorlukları bizimle paylaşabilir ve bunlara nasıl çözümler getirdiğini anlatabilirsin.
+- Çözüm getiremediğin sorunlar mı var? O zaman bunlar için nasıl araştırmalar yaptın çözmek için hangi adımları izledin, detaylıca bizimle paylaşabilirsin.
+- Çalışma programını bizimle paylaşabilirsin. Biliyoruz ki aynı zamanda eğitimine devam ediyorsun. Zamanı yönetmek o kadar da kolay bir iş değil. Zaman yönetimi bizim için de kritik bir öneme sahip. Bu disiplin seni değerlendirirken belki bize de ufak bir fikir verebilir.
 
-<br/>
+## Vercel'e Yükleme ve Teslim
 
-##### İsmi girilen github kullanicisinin public repositorylerinin ‘created_at’ degerine gore listelenmesi
+Proje'nin bir fork'unu alarak kendi repo'na taşımanı ve onun üzerinde çalışmanı talep ediyoruz. Geliştirmen son aşamaya geldiğinde de `muhammeddeniz`, `bahtiyarerden` ve `baris-karan` ile bu repo'yu paylaşmanı istiyoruz.
 
-<br/>
+Next.js uygulamasını yüklemenin en basit yolu [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) platformunu kullanmaktır.
 
-##### Listelenen repository kart larinda bulunmasi gereken bilgiler
+Projenin Vercel'e yüklenerek eğer varsa projeye dair notlarınla birlikte preview linkinin de README.md dosyasına koyulmasını bekliyoruz. Aşağıdaki alan senin için!
 
-1. Repository ismi
-2. Repository oluşturulma zamanı
-3. Repository url bilgisi
+## Notlar ve Linkler
 
-- repository ismine koyularak tıklandığında url yönlenmesinin sağlanması
-
-4. Repository dili
-5. Favori butonu
-
-<br/>
-
-#### Her bir repository nin sağ üstünde yıldız ikonuna basıldığında favoriye eklenebilir olması
-
-- favoriye eklenmis bir repositoryde favoriye eklendigi icon olarak degismesi beklenmektedir.
-
-#### Favoriye eklenmiş repository nin yildiz icon una basıldığında favorilerden silinmesi
-
-- Favoriden çıkarılmış bir repository icon un başlangıç haline geri dönmesi beklenmektedir
-
-#### Sayfanın sağ üstünde bulunan favori repolar butonuna basıldığında
-
-- Favori olan kaydedilmiş repository lerin listelenmesi beklenmektedir.
-
-#### vercel deploy edilmesi
-
-- Bonus
-
-<br /><br />
-
-### 3. Görevde kullanılması uygun görülen teknolojiler
-
-- Redux ( setupi starterkit ile geliyor zaten )
-- Redux bağlantısı React Hooklar ile yapılması (orn: useSelector, useDispatch)
-- Stillendirme icin hazir kutuphane kullanılabilir (orn: chakraui, bootstrap, scss, css)
-- Axios HTTP service istekleri için kullanılabilir.
-- React router dom Sayfa yonlendirmeleri icin kullanilmali.
-- react-vertical-timeline-component ile zaman dilimine gore sortlanmasi (repolar listelenirken kullanilabilir)
-
-<br/></br>
-
-### 4. Kodlarken Nelere Dikkat Etmeli?
-
-- Functional component (onemli)
-- Clean Code
-- Commitlerin duzenli olmasi
-- İstenilen görevin fonksiyonelliğinin karşılanması.
-
-<br/></br>
-
-<b>BAŞARILAR...</b>
-</br>
-
-## License
-
-MIT © [DogGO](https://github.com/doggo-frontend)
+Preview Linki:
