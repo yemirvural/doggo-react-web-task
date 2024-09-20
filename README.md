@@ -42,7 +42,7 @@ Community içerisinde geliştirilen tüm kütüphaneler kullanılabilir. Kullan�
 
 ## Vercel'e Yükleme ve Teslim
 
-Proje'nin zip dosyasını indirdikten sonra githuba 'initial commit' commiti ile yüklemeni ve daha sonra proje üzerinde çalışmaya başlamanı bekliyoruz. Geliştirmen son aşamaya geldiğinde de `muhammeddeniz`, `bahtiyarerden` ve `baris-karan` ile bu repo'yu paylaşmanı istiyoruz.
+Proje'nin zip dosyasını indirdikten sonra githubda 'initial commit' commiti ile yüklenmesi gerekmektedir, daha sonra proje üzerinde çalışmaya başlanmalıdır. Geliştirmeler main branchten farklı bir branchte yapılmalı son aşamada pull request ile birleşltirilmelidir. Geliştirmeler bittikten sonra github reposu `muhammeddeniz`, `bahtiyarerden` ve `baris-karan` paylaşılmalıdır.
 
 Next.js uygulamasını yüklemenin en basit yolu [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) platformunu kullanmaktır.
 
