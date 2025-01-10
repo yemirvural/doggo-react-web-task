@@ -1,16 +1,42 @@
-## Başlarken
+## Projeyi Çalıştırma
 
-Uygulamayı çalıştırmak için aşağıdaki komutların herhangi birisini çalıştırabilirsin:
+### 1. Gerekli Paketleri Kurun
+Proje dizininde aşağıdaki komutu çalıştırarak gerekli bağımlılıkları yükleyin:
+
+```bash
+npm install
+```
+
+---
+
+### 2. JSON-Server'ı Başlatın
+JSON-Server, projenin sahte API'sini çalıştırır. İlk terminali açarak aşağıdaki komutu çalıştırın:
+
+```bash
+npm run json-server
+```
+
+- Bu komut, `package.json` içinde şu şekilde tanımlanmıştır:
+  ```json
+  "scripts": {
+    "json-server": "json-server --watch db.json --port 3001"
+  }
+  ```
+- JSON-Server varsayılan olarak `http://localhost:3001` adresinde çalışır.
+
+---
+
+### 3. Uygulamayı Geliştirme Modunda Çalıştırın
+İkinci bir terminal açın ve uygulamayı çalıştırmak için şu komutu çalıştırın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+
+- Bu komut, Next.js veya React uygulamasını geliştirme modunda başlatır.
+- Varsayılan olarak, uygulama `http://localhost:3000` adresinde çalışır.
+
+---
 
 ## Görev
 

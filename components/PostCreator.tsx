@@ -3,8 +3,6 @@
 import { useState } from "react"
 import { ImageIcon, FileImageIcon as FileGif, ListFilter, Smile, VoteIcon as Poll } from 'lucide-react'
 import styles from './PostCreator.module.css'
-import { useDispatch } from 'react-redux'
-import { createPost } from "@/app/store/features/postsSlice"
 import { v4 as uuidv4 } from "uuid";
 
 interface PostCreatorProps {
@@ -13,7 +11,6 @@ interface PostCreatorProps {
 
 export function PostCreator({ onClose }: PostCreatorProps) {
   const [content, setContent] = useState("")
-  const dispatch = useDispatch()
 
   const handleCreatePost = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -21,7 +18,7 @@ export function PostCreator({ onClose }: PostCreatorProps) {
     // Create a new post object
     const newPost = {
       id: uuidv4(),
-      username: "me",
+      username: "yemirvural",
       avatar: "",
       handle: "handle",
       content: content,
@@ -47,9 +44,6 @@ export function PostCreator({ onClose }: PostCreatorProps) {
       .catch((error) => {
         console.error("Hata:", error);
       });
-
-    // Dispatch the createPost action with the new post
-    dispatch(createPost(newPost))
     
     // Clear the input
     setContent("")
@@ -64,7 +58,7 @@ export function PostCreator({ onClose }: PostCreatorProps) {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.avatar}>
-          <img src={`https://i.pravatar.cc/150?u=me`} alt="Avatar" />
+          <img src={`https://i.pravatar.cc/150?u=yemirvural`} alt="Avatar" />
         </div>
         <div className={styles.inputArea}>
           <textarea

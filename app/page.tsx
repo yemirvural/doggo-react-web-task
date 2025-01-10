@@ -6,8 +6,6 @@ import { Post, type Post as PostType } from "../components/Post"
 import styles from './page.module.css'
 import Loading from './loading'
 import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
-import RootState from './store/features/postsSlice' // store dosyanızın yolunu belirtin
 
 async function fetchPosts(page: number = 1, searchTerm: string = '') {
   const baseUrl = `${process.env.NEXT_PUBLIC_DB_HOST}/posts`

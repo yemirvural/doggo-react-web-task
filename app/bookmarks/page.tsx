@@ -5,7 +5,7 @@ import { RootState } from '../store/store'
 import { Post, type Post as PostType } from '../../components/Post'
 import { useEffect, useState } from 'react'
 
-async function fetchPosts(page: number = 1, searchTerm: string = '') {
+async function fetchPosts() {
   const baseUrl = `${process.env.NEXT_PUBLIC_DB_HOST}/posts`
   const params = new URLSearchParams({
     _sort: 'timestamp',

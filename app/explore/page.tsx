@@ -1,6 +1,5 @@
-import { MoreHorizontal, Search } from 'lucide-react'
+import { MoreHorizontal } from 'lucide-react'
 import TrendingTopics  from './TrendingTopics'
-import { Post } from "@/components/Post"
 import styles from './page.module.css'
 
 export default function Explore() {

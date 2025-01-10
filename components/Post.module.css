@@ -24,13 +24,6 @@
   border-bottom: 1px solid #eee;
 }
 
-.commentHeader {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.875rem;
-}
-
 .commentContent {
   color: #4b5563;
 }

@@ -31,8 +31,8 @@ export interface Post {
 }
 
 interface PostProps {
-  readonly post: Post
-  searchTerm?: string
+  readonly post: Post;
+  searchTerm?: string;
 }
 
 export async function getPosts(page: number = 1, limit: number = 5) {
@@ -57,7 +57,7 @@ async function getUnsplashImage(query: string) {
 
 function extractQueryParam(url: string): string {
   const queryMatch = url.split('?')[1]
-  if (!queryMatch) return '' // TODO: Handle when queryMatch is not found.
+  if (!queryMatch) return ''
   return queryMatch
 }
 
@@ -65,12 +65,10 @@ export function Post({ post, searchTerm = '' }: PostProps & { searchTerm?: strin
   const { username, content, timestamp, images, likes, reposts, comments, tags } = post
   const [imageUrls, setImageUrls] = useState<string[]>([])
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [loading, setLoading] = useState(true)
   const [showComments, setShowComments] = useState(false)
   const dispatch = useDispatch()
   const likedPostIds = useSelector((state: RootState) => state.posts.likedPostIds)
   const bookmarkedPostIds = useSelector((state: RootState) => state.posts.bookmarkedPostIds)
-  const [hasError, setHasError] = useState(false);
 
   const isLiked = likedPostIds.includes(post.id)
   const isBookmarked = bookmarkedPostIds.includes(post.id)
@@ -90,8 +88,6 @@ export function Post({ post, searchTerm = '' }: PostProps & { searchTerm?: strin
         setImageUrls(urls.filter(Boolean) as string[])
       } catch (error) {
         console.error('Error fetching images:', error)
-      } finally {
-        setLoading(false)
       }
     }
 
@@ -192,7 +188,6 @@ export function Post({ post, searchTerm = '' }: PostProps & { searchTerm?: strin
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority={currentImageIndex === 0}
                         quality={90}
-                        onError={() => setHasError(true)} // Hata olduğunda state'i güncelle
                       />
                     </div>
                     {imageUrls.length > 1 && (
@@ -272,7 +267,7 @@ export function Post({ post, searchTerm = '' }: PostProps & { searchTerm?: strin
             comments.map((comment, index) => (
               <div key={index} className={styles.commentItem}>
                 <div className={styles.commentAvatar}>
-                  <img src="/placeholder.svg" alt={comment.username} />
+                  <img src={`https://i.pravatar.cc/150?u=${username}`} alt={username} />
                 </div>
                 <div className={styles.commentBody}>
                   <div className={styles.commentHeader}>
