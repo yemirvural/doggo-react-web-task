@@ -1,0 +1,49 @@
+.container {
+    padding-bottom: 5rem;
+  }
+  
+  .banner {
+    height: 12rem;
+    background-color: #F6441E;
+  }
+  
+  .profileInfo {
+    position: relative;
+    padding: 0 1rem;
+  }
+  
+  .avatar {
+    position: absolute;
+    top: -4rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    border: 4px solid white;
+    overflow: hidden;
+  }
+  
+  .userInfo {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .handle {
+    color: #6b7280;
+  }
+  
+  .posts {
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      padding-bottom: 0;
+    }
+  }
+  
+  

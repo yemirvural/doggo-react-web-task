@@ -1,0 +1,74 @@
+.container {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .content {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .inputArea {
+    flex: 1;
+  }
+  
+  .textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    resize: none;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .attachments {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  @media (min-width: 640px) {
+    .attachments {
+      gap: 0.5rem;
+    }
+  }
+  
+  .attachmentButton {
+    padding: 0.25rem;
+    background: none;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .attachmentButton:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .postButton {
+    background-color: #FA7659;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .postButton:hover {
+    background-color: #fd6442;
+  }
+  
+  

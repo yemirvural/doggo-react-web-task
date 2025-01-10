@@ -1,0 +1,114 @@
+.container {
+    padding-bottom: 5rem;
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+  }
+  
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .searchButton {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .searchButton:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .searchInput {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    background-color: #f3f4f6;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      padding-bottom: 0;
+    }
+  }
+  
+  .loadingPost {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .loadingAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #eee;
+  }
+  
+  .loadingContent {
+    flex: 1;
+  }
+  
+  .loadingLine {
+    height: 0.75rem;
+    background: #eee;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .loadingLine:last-child {
+    width: 75%;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+  
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .loadingSpinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  

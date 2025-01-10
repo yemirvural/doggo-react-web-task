@@ -1,0 +1,89 @@
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+  
+  .navItem {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+  }
+  
+  .navItem:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .navItemActive {
+    color: #FA7659;
+  }
+  
+  .newPostButton {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    background-color: #FA7659;
+    color: white;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .newPostButton:hover {
+    background-color: #2563eb;
+  }
+  
+  .modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 50;
+  }
+  
+  .modalContent {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 32rem;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .modalTitle {
+    font-weight: bold;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 768px) {
+    .nav, .newPostButton {
+      display: none;
+    }
+  }
+  
+  
