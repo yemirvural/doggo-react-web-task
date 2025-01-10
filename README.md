@@ -76,4 +76,45 @@ Projenin Vercel'e yüklenerek eğer varsa projeye dair notlarınla birlikte prev
 
 ## Notlar ve Linkler
 
-Preview Linki:
+### Karşılaştığım Zorluklar
+1. **Eksik Veriler:**
+   - `post_dataset.json` dosyasında `display_name` ve `user_avatar` gibi alanlar eksikti.
+2. **Hatalı Linkler:**
+   - Tüm Unsplash linkleri 404 hatası dönüyor, bu da görsellerin yüklenememesine neden oluyordu.
+3. **Redux Entegrasyonu:**
+   - Redux ile state yönetimi yaparken, bazı bileşenlerin güncellenmesi gerekti. Bu, bileşenlerin yeniden render edilmesi sırasında sorunlara yol açtı.
+
+### Çözümlerim
+1. **Eksik Verilere Dinamik Varsayılan Değerler Atadım:**
+   - `display_name` eksik olduğunda "Anonymous User", `avatar` eksik olduğunda varsayılan bir avatar resmi atandı.
+2. **Hatalı Linkler İçin Alternatif Görsel Kaynakları Kullandım:**
+   - Unsplash yerine başka bir görsel kaynağı kullanarak görsellerin yüklenmesini sağladım.
+3. **Redux Entegrasyonunu Geliştirdim:**
+   - Redux store'unu güncelleyerek bileşenlerin doğru bir şekilde yeniden render edilmesini sağladım. Ayrıca, bileşenlerin `useSelector` ve `useDispatch` hook'larını doğru bir şekilde kullandım.
+
+Projede **infinite scroll** ve **lazy loading** yapıları uygulandı:
+
+- **Infinite Scroll:** Sayfanın altına yaklaşıldıkça API'den yeni postlar otomatik olarak yüklenir. Bu, başlangıçta tüm verilerin yüklenmesini engelleyerek performansı artırır.
+- **Lazy Loading:** Görseller yalnızca kullanıcı tarafından görüntülendiğinde yüklenir, böylece sayfa yükleme süresi ve bant genişliği tüketimi optimize edilir.
+
+Bu yöntemler sayesinde proje, daha hızlı ve kullanıcı dostu bir deneyim sunar.
+
+`post_dataset.json` dosyasında eksik (display_name ve avatar image linki 
+mevcut değildi) veya Unsplash linkleri 404 dönüyordu. 
+
+Veri setindeki https://source.unsplash.com/random/620x440?istanbul gibi linklerden `extractQueryParam` fonksiyonuyla keywordu (örneğin, istanbul) çıkardım ve Unsplash API'sine dinamik olarak bağlandım. Bu yöntemle hatalı veya eksik görseller yerine doğru görselleri runtime'da çektim. Ancak, her görsel için ayrı API çağrısı yapmak performans maliyeti yaratabilir ve kullanıcı deneyimini olumsuz etkileyebilir.
+
+Her kullanıcı için unique olan `username` değerini kullanarak bir random avatar API bağlantısı kurarak çözdüm. Bu sayede her kullanıcı için benzersiz ve rastgele bir avatar görüntüsü elde edildi.
+
+* `post_dataset.json`'i değiştirmeyi tercih etmedim çünkü veri kaynağını değiştirmek, gelecekteki güncellemelerle uyumluluğu zorlaştıracağını ve bakım maliyetini artıracağını düşündüm.  
+
+* Vercel'a deploy ederken `json-server`'i `json-server-vercel` formatında clone proje biçimde deploy edip ana repo ile bağlantısını sağladım.
+
+## Çalışma Programım Hakkında
+
+Projeye, final haftamla çakışması nedeniyle teslim tarihine 36 saat kala yoğun bir şekilde odaklanabildim. Zaman yönetimiyle sınırlı bir sürede elimden gelenin en iyisini yaparak projeyi tamamladım.
+
+### Preview Linkleri
+
+- **Client:** [https://doggo-react-web-task-gi4p.vercel.app/](https://doggo-react-web-task-gi4p.vercel.app/)
+- **DB Server:** [https://doggo-json-server.vercel.app/posts](https://doggo-json-server.vercel.app/posts)
