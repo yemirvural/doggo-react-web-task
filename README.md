@@ -104,6 +104,8 @@ mevcut değildi) veya Unsplash linkleri 404 dönüyordu.
 
 Veri setindeki https://source.unsplash.com/random/620x440?istanbul gibi linklerden `extractQueryParam` fonksiyonuyla keywordu (örneğin, istanbul) çıkardım ve Unsplash API'sine dinamik olarak bağlandım. Bu yöntemle hatalı veya eksik görseller yerine doğru görselleri runtime'da çektim. Ancak, her görsel için ayrı API çağrısı yapmak performans maliyeti yaratabilir ve kullanıcı deneyimini olumsuz etkileyebilir.
 
+Unsplash API görsellerinin kullanımı demo proje için 50 respone/hour'a kadar sınırlı olması sebebiyle, görsel içerikler yerine `skeleton yapısı` kullanmayı tercih ettim. Bu sayede, görseller yüklenirken kullanıcıya bir placeholder (yer tutucu) gösterilerek sayfanın daha hızlı ve akıcı bir şekilde render edilmesi sağlandı. Skeleton yapısı, hem görsel kaynak sorunlarını çözdü hem de kullanıcı deneyimini iyileştirdi.
+
 Her kullanıcı için unique olan `username` değerini kullanarak bir random avatar API bağlantısı kurarak çözdüm. Bu sayede her kullanıcı için benzersiz ve rastgele bir avatar görüntüsü elde edildi.
 
 * `post_dataset.json`'i değiştirmeyi tercih etmedim çünkü veri kaynağını değiştirmek, gelecekteki güncellemelerle uyumluluğu zorlaştıracağını ve bakım maliyetini artıracağını düşündüm.  
