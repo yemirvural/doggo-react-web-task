@@ -1,0 +1,106 @@
+.container {
+    min-height: 100vh;
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #eff3f4;
+  }
+  
+  .headerContent {
+    padding: 12px 16px;
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f1419;
+  }
+  
+  .searchContainer {
+    padding: 8px 16px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 9999px;
+    border: 1px solid #eff3f4;
+    background-color: #eff3f4;
+    font-size: 15px;
+  }
+  
+  .searchInput:focus {
+    background-color: #fff;
+    border-color: #1d9bf0;
+    outline: none;
+  }
+  
+  .trendingSection {
+    background-color: #f7f9f9;
+    border-radius: 16px;
+    margin: 12px 16px;
+    overflow: hidden;
+  }
+  
+  .trendingHeader {
+    padding: 12px 16px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f1419;
+  }
+  
+  .trendingItem {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .trendingItem:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .trendingInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .category {
+    font-size: 13px;
+    color: #536471;
+  }
+  
+  .topic {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1419;
+  }
+  
+  .posts {
+    font-size: 13px;
+    color: #536471;
+  }
+  
+  .menuButton {
+    padding: 4px;
+    border: none;
+    background: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    color: #536471;
+  }
+  
+  .menuButton:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+    color: #1d9bf0;
+  }
+  
+  

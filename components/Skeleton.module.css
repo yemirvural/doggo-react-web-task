@@ -1,0 +1,33 @@
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image {
+  width: 100%;
+  height: 200px; /* İstediğiniz yükseklik */
+  background-color: #e0e0e0; /* Gri arka plan */
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  animation: pulse 1.5s infinite; /* Pulse animasyonu */
+}
+
+.text {
+  width: 100%;
+  height: 20px; /* İstediğiniz yükseklik */
+  background-color: #e0e0e0; /* Gri arka plan */
+  border-radius: 4px; /* Yuvarlatılmış köşeler */
+  animation: pulse 1.5s infinite; /* Pulse animasyonu */
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #d0d0d0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+} 
