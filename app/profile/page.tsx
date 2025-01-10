@@ -13,7 +13,7 @@ export default function Profile() {
   /* useEffect(() => {
     const fetchUserPosts = async () => {
       try {
-        const res = await fetch('http://localhost:3001/posts')
+        const res = await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/posts`)
         if (!res.ok) throw new Error('Failed to fetch posts')
         const allPosts = await res.json()
         setPosts(allPosts.slice(0, 5))

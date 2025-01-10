@@ -38,7 +38,7 @@ interface PostProps {
 export async function getPosts(page: number = 1, limit: number = 5) {
   await new Promise(resolve => setTimeout(resolve, 1000))
   const res = await fetch(
-    `http://localhost:3001/posts?_page=${page}&_limit=${limit}&_sort=-timestamp`,
+    `${process.env.NEXT_PUBLIC_DB_HOST}/posts?_page=${page}&_limit=${limit}&_sort=-timestamp`,
     { cache: 'no-store' }
   )
   if (!res.ok) throw new Error('Failed to fetch posts')
@@ -132,9 +132,9 @@ export function Post({ post, searchTerm = '' }: PostProps & { searchTerm?: strin
 
     // Redux aksiyonunu çağır
     dispatch(toggleLike(post.id));
-
+    
     // Sunucuya PATCH isteği gönder
-    fetch(`http://localhost:3001/posts/${post.id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/posts/${post.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

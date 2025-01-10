@@ -51,9 +51,3 @@ Projenin Vercel'e yüklenerek eğer varsa projeye dair notlarınla birlikte prev
 ## Notlar ve Linkler
 
 Preview Linki:
-
-https://api.unsplash.com/photos/random/?query=book&client_id={env.UNSPLASH_ACCESS_KEY}
-
-* Unsplash linkleri hatalı bunu nasıl handle ettim?
-* Neden post_dataset.json'i değiştirmeyi tercih etmedim?
-* Search işlemi hk.

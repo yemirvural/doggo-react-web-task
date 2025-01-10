@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux'
 import RootState from './store/features/postsSlice' // store dosyanızın yolunu belirtin
 
 async function fetchPosts(page: number = 1, searchTerm: string = '') {
-  const baseUrl = 'http://localhost:3001/posts'
+  const baseUrl = `${process.env.NEXT_PUBLIC_DB_HOST}/posts`
   const params = new URLSearchParams({
     _page: page.toString(),
     _limit: '5',
@@ -71,7 +71,7 @@ function PostList({ searchTerm }: { searchTerm: string }) {
     if (page > 1) {
       const loadMorePosts = async () => {
         if (loading || !hasMore) return
-        
+
         setLoading(true)
         try {
           const newPosts = await fetchPosts(page, searchTerm)

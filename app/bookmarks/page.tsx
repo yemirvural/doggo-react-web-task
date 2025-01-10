@@ -6,7 +6,7 @@ import { Post, type Post as PostType } from '../../components/Post'
 import { useEffect, useState } from 'react'
 
 async function fetchPosts(page: number = 1, searchTerm: string = '') {
-  const baseUrl = 'http://localhost:3001/posts'
+  const baseUrl = `${process.env.NEXT_PUBLIC_DB_HOST}/posts`
   const params = new URLSearchParams({
     _sort: 'timestamp',
     _order: 'desc'

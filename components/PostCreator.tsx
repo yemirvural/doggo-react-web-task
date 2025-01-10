@@ -33,7 +33,7 @@ export function PostCreator({ onClose }: PostCreatorProps) {
       comments: []
     }
     
-    fetch("http://localhost:3001/posts", {
+    fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
